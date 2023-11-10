@@ -3,6 +3,19 @@ public class PizzaCompany {
             int totalNumberOfPeople = hungry + superHungry + classic;
             return totalNumberOfPeople;
         }
+
+    public PizzaSize suggestPizzaPackage(byte Large, byte Medium, byte Small) {
+
     }
+
+    public int CalculateTotalOrder() {
+    }
+
+    public void printPizzaPrices() {
+    }
+
+    public void placeOrder() {
+    }
+}
 
 

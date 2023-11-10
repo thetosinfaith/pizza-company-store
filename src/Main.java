@@ -16,133 +16,58 @@ public class Main {
                 4 -> Place an order
                 5 -> Exit
                 """);
-        int pizzanaut = input.nextInt();
+        byte pizzanaut = input.nextByte();
         System.out.println("You picked " + pizzanaut + "!");
 
-        switch (pizzanaut){
-            case 1:
-                pizzaCompany.testForTotalNumberOfPeopleAtTheParty(20, 30, 10);
-                System.out.println("How many hungry people do you have?");
-                int hungry = input.nextInt();
+        switch (pizzanaut) {
+            switch (pizzanaut) {
+                case 1:
+                    pizzaCompany.testForTotalNumberOfPeopleAtTheParty(20, 30, 10);
+                    System.out.println("How many hungry people do you have?");
+                    byte hungry = input.nextByte();
 
-                System.out.println("How many super hungry people do you have?");
-                int superHungry = input.nextInt();
+                    System.out.println("How many super hungry people do you have?");
+                    byte superHungry = input.nextByte();
 
-                System.out.println("How many classic people do you have?");
-                int classic = input.nextInt();
-                System.out.println("Great! So, you have " + hungry + " hungry, " + superHungry + " super hungry, and " + classic + " classic.");
-
-                System.out.println("");
-
-                System.out.println("""
-                        Suggested pizza package: """ + pizzaSize.name() + ""\" Pizza
-                                                    This pizza is perfect for a party of ""\" + pizzaSize.getPartySize() + ""\" people.
-                                                    Price: ""\" + pizzaSize.getPrice());
-                        """);
-
-                System.out.println("Would you like to order this pizza package?");
-
-                boolean order = SCANNER.nextBoolean();
-
-                if (order) {
-                    System.out.println("Your order is complete. Your order will be delivered in 30 minutes or less. Thank you for ordering from Pizzazz!");
-
-                    int slices = pizzaCompany.CalculateTotalOrder();
-
-                    System.out.println("You ordered a " + pizzaSize.name() + " pizza with " + slices + " slices.");
-                }
-                break;
-
-
-                switch (pizzanaut){
-                    case 2:
-                        pizzaCompany.
-
-
-
-            switch (pizzaSize) {
-                case BIGPIZZA ->
-
-
+                    System.out.println("How many classic people do you have?");
+                    byte classic = input.nextByte();
                     System.out.println("Great! So, you have " + hungry + " hungry, " + superHungry + " super hungry, and " + classic + " classic.");
 
-                    for (int c = 0; c < 1; c++) {
-                        for (int j = 0; j < c; j++) {
-                            System.out.println("Fetching data...");
+                    PizzaSize pizzaSize = pizzaCompany.suggestPizzaPackage(hungry, superHungry, classic);
 
-                        }
-                        System.out.println("""
-                                Suggested pizza package: Medium Pizza
-                                This pizza is perfect for a party of 4-6 people.
-                                Price: #2K
-                                                                
-                                Would you like to order this pizza package?
-                                """);
-                        boolean check = input.nextBoolean();
+                    System.out.println("This" + pizzaSize.name() + "perfect for a party of" + PizzaSize.size + "It's" + PizzaSize.getPrice);
+                    System.out.println("Would you like to order this pizza package?");
 
-                        break;
+                    if (input.nextBoolean()) {
+                        System.out.println("Your order is complete. Your order will be delivered in 30 minutes or less. Thank you for ordering from Pizzazz!");
 
-
-                        if (check == yes)
-                            PizzaCompany pizzaCompany = new PizzaCompany() {
-                                int slices = pizzaCompany.CalculateTotalOrder();
+                        int slices = pizzaCompany.CalculateTotalOrder();
 
                         System.out.print("Okay, your order is complete. Your order will be delivered in 30 minutes or less. Thank you for ordering from Pizzazz!");
 
-                            }
-
                     }
+                    break;
 
-                        else if (pizzanaut == hungry) {
-                            PizzaCompany pizzaCompany = new PizzaCompany();
-                            int slices = pizzaCompany.largeHas10Slices(10);
-                            System.out.println("The number of slices needed for a party of 15 people is: " + slices);
-                        }
+                case 2:
+                    System.out.println("How many slices do you have left?");
+                    int slices = input.nextInt();
 
-                        switch (pizzanaut) {
-                            case 5 -> {
-                                System.out.println("""
-                                        1 -> Big Pizza = #5k
-                                        2 -> Medium Pizza = #3K
-                                        3 -> Small Pizza = #2k
-                                        """);
+                    System.out.println("How many people are you feeding?");
+                    int people = input.nextInt();
 
-                            }
+                    int slicesPerPerson = slices / people;
 
-                    }
-                    switch (pizzanaut) {
-                        case 4 -> {
-                            System.out.println("Your order has been placed. You can expect your pizzas to be delivered within 30 minutes.");
-                        }
+                    System.out.println("Each person will get " + slicesPerPerson + " slices.");
+                    break;
 
-                    }
+                case 3:
+                    pizzaCompany.printPizzaPrices();
+                    break;
 
-                    switch (pizzanaut) {
-                        case 5 -> {
-                            System.out.println("""
-                                    1 -> Contact customer support
-                                    2 -> View your order history
-                                    3 -> Leave a feedback
-                                    """);
-                        }
-                    }
+                case 4:
+                    pizzaCompany.placeOrder();
+                    break;
 
+                case 5:
 
-                default -> throw new IllegalStateException("Unexpected value: " + pizzaSize);
             }
-                default -> throw new IllegalStateException("Unexpected value: " + input);
-            }
-
-        }
-
-
-//        while (!input.equals(5));
-//        System.out.println("Thanks for Patronizing!");
-
-    }
-
-}
-
-
-
-

@@ -4,6 +4,6 @@ enum PizzaSize {
 
     MEDIUMPIZZA,
 
-    SMALLPIZZA,
+    SMALLPIZZA, size, getPrice,
 
     }
