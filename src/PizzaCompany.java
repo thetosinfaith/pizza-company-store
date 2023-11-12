@@ -1,8 +1,14 @@
+import static javax.swing.text.StyleConstants.Size;
+
 public class PizzaCompany {
-    public enum Size {
-        SMALL,
-        MEDIUM,
-        LARGE
+    public Size pizzaSize(int largePizzas, int mediumPizzas, int smallPizzas) {
+
+        public enum Size {
+            SMALL,
+            MEDIUM,
+            LARGE
+        }
+
     }
 
     public int totalNumberOfPeopleAtTheParty(int hungry, int superHungry, int classic) {
