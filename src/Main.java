@@ -31,7 +31,10 @@ public class Main {
                 int classic = input.nextInt();
                 System.out.println("Great! So, you have " + hungry + " hungry, " + superHungry + " super hungry, and " + classic + " classic.");
 
-                int pizzaSize = pizzaCompany.suggestPizzaPackage(hungry, superHungry, classic);
+                LegendsPizza legendsPizza = new LegendsPizza();
+                legendsPizza.peopleAtTheParty(9, 7, 3);
+
+
 
                 System.out.println("This " + pizzaSize + " pizza is perfect for a party of " + pizzaSize.ordinal() + ". It's " + pizzaSize.getPrice());
                 System.out.println("Would you like to order this pizza package?");
